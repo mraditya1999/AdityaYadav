@@ -8,7 +8,6 @@ const navMenu = document.getElementById('nav-menu'),
 if (navToggle) {
   navToggle.addEventListener('click', () => {
     navMenu.classList.add('show-menu');
-    navMenu.style.display = 'block';
   });
 }
 
@@ -17,7 +16,7 @@ if (navToggle) {
 if (navClose) {
   navClose.addEventListener('click', () => {
     navMenu.classList.remove('show-menu');
-    navMenu.style.display = 'none';
+    // navMenu.style.display = 'none';
   });
 }
 
@@ -28,7 +27,7 @@ const linkAction = () => {
   const navMenu = document.getElementById('nav-menu');
   // When we click on each nav__link, we remove the show-menu class
   navMenu.classList.remove('show-menu');
-  navMenu.style.display = 'none';
+  // navLink.style.display = 'none';
 };
 navLink.forEach((n) => n.addEventListener('click', linkAction));
 
@@ -214,3 +213,4 @@ sr.reveal(`.skills__content:nth-child(2), .contact__content:nth-child(2)`, {
 });
 sr.reveal(`.services__card`, { interval: 100 });
 sr.reveal(`.nav`, { delay: 100, origin: 'top', interval: 100 });
+
