@@ -2,11 +2,13 @@
 const navMenu = document.getElementById('nav-menu'),
   navToggle = document.getElementById('nav-toggle'),
   navClose = document.getElementById('nav-close');
+
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
 if (navToggle) {
   navToggle.addEventListener('click', () => {
     navMenu.classList.add('show-menu');
+    navMenu.style.display = 'block';
   });
 }
 
@@ -15,6 +17,7 @@ if (navToggle) {
 if (navClose) {
   navClose.addEventListener('click', () => {
     navMenu.classList.remove('show-menu');
+    navMenu.style.display = 'none';
   });
 }
 
@@ -25,6 +28,7 @@ const linkAction = () => {
   const navMenu = document.getElementById('nav-menu');
   // When we click on each nav__link, we remove the show-menu class
   navMenu.classList.remove('show-menu');
+  navMenu.style.display = 'none';
 };
 navLink.forEach((n) => n.addEventListener('click', linkAction));
 
@@ -201,7 +205,7 @@ const sr = ScrollReveal({
 sr.reveal(
   `.home__data, .projects__container, .testimonial__container,.footer__container`
 );
-sr.reveal(`.home__info div`, { delay: 200, origin: 'bottom', interval: 100 });
+sr.reveal(`.home__info div`, { delay: 100, origin: 'bottom', interval: 100 });
 sr.reveal(`.skills__content:nth-child(1), .contact__content:nth-child(1)`, {
   origin: 'left',
 });
@@ -209,27 +213,4 @@ sr.reveal(`.skills__content:nth-child(2), .contact__content:nth-child(2)`, {
   origin: 'right',
 });
 sr.reveal(`.services__card`, { interval: 100 });
-sr.reveal(`.nav`, { delay: 200, origin: 'top', interval: 100 });
-
-function randomValues() {
-  anime({
-    targets: '.square, .circle, .triangle',
-    translateX: function () {
-      return anime.random(-500, 500);
-    },
-    translateY: function () {
-      return anime.random(-300, 300);
-    },
-    rotate: function () {
-      return anime.random(0, 360);
-    },
-    scale: function () {
-      return anime.random(0.2, 2);
-    },
-    duration: 1000,
-    easing: 'easeInOutQuad',
-    complete: randomValues,
-  });
-}
-
-randomValues();
+sr.reveal(`.nav`, { delay: 100, origin: 'top', interval: 100 });
