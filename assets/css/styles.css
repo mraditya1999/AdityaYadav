@@ -386,7 +386,7 @@ text {
 /* Show menu */
 
 .show-menu {
-  bottom: 3rem;
+  bottom: 0.8rem;
 }
 
 /* Active link */
