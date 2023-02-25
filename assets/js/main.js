@@ -213,4 +213,3 @@ sr.reveal(`.skills__content:nth-child(2), .contact__content:nth-child(2)`, {
 });
 sr.reveal(`.services__card`, { interval: 100 });
 sr.reveal(`.nav`, { delay: 100, origin: 'top', interval: 100 });
-
